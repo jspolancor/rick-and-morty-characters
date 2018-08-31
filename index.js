@@ -1,5 +1,3 @@
-let self = null;
-
 var app = new Vue({
   el: "#app",
   data: {
@@ -9,23 +7,24 @@ var app = new Vue({
     loading: false,
     pages: 0,
   },
-  created(){
-    self = this;
+  created(){    
     this.getData(this.page);
   },
   methods: {
     getData(page) {
-      self.page = page;
-      self.loading = true;
+      this.page = page;
+      this.loading = true;
       fetch('https://rickandmortyapi.com/api/character/?page=' + page)
-        .then(function(response) {
+        .then(response => {
           return response.json();
         })
-        .then(function(res) {
-          self.items = res.results;          
-          self.total = res.info.count;
-          self.pages = res.info.pages;
-          self.loading = false;
+        .then(res => {
+          this.items = res.results;          
+          this.total = res.info.count;
+          this.pages = res.info.pages;
+          setTimeout(() => {
+            this.loading = false;
+          }, 1500);          
         });
     }
   }

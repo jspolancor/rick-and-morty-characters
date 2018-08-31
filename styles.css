@@ -22,6 +22,11 @@ h1{
     border: solid #d8d8d8 1px;
     min-height: 300px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: 0.5s;
+}
+
+.card:hover{
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 .card .image{
@@ -40,7 +45,7 @@ h1{
 .loader{
     width: 100vw;
     height: 100vh;
-    background: #0000007a;
+    background: #000000c2;
     top: 0;
     left: 0;
     position: fixed;
@@ -49,24 +54,32 @@ h1{
     align-items: center;
     justify-content: center;
     z-index: 1;
+    flex-direction: column;
+}
+
+.loader p {
+    font-size: 30px;
+}
+
+.loader img{
+    max-width: 100%;
 }
 
 .paginator{
     position: fixed;
-    bottom: 40px;
+    bottom: 66px;
     display: flex;
     width: 100vw;
 }
 
 .paginator button{
-    width: 30px;
-    height: 30px;
-    border: none;
-    background: #e9c962;
-    border-radius: 50%;
-    border: solid #de6dc7 1px;
+    width: 50px;
+    height: 50px;
+    border: none;    
+    border-radius: 50%;    
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 .paginator button:hover{

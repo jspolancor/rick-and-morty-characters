@@ -5,7 +5,7 @@ var app = new Vue({
   data: {
     items: [],
     total: 0,
-    page: 0,
+    page: 1,
     loading: false,
     pages: 0,
   },

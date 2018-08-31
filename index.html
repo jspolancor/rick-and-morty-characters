@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test MU</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">        
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>    
+</head>
+<body>
+    <div id="app">
+        <div class="loader" v-show="loading">
+            Loading ...
+        </div>
+        <h1>Rick and Morty characters</h1>      
+        <div class="grid">
+            <div class="card"
+                v-for="character in items">
+                <div class="image">
+                    <img :src="character.image" alt="">
+                </div>
+                <div class="content">
+                    <p><strong>{{ character.name }}</strong></p>
+                    <p>{{ character.status }}</p>
+                </div>            
+            </div>
+        </div>     
+        <div class="paginator">
+            <button 
+                @click="getData(page - 1)"
+                class="prev" 
+                :disabled="page === 0">⬅️</button>
+            <button 
+                @click="getData(page + 1)"
+                class="next" 
+                :disabled="page === pages ">➡️</button>            
+        </div>     
+    </div>
+
+    
+    <script src="index.js"></script>
+</body>
+</html>

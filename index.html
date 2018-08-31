@@ -19,7 +19,7 @@
             <div class="card"
                 v-for="character in items">
                 <div class="image">
-                    <img :src="character.image" alt="">
+                    <img v-if="!loading" :src="character.image" alt="">
                 </div>
                 <div class="content">
                     <p><strong>{{ character.name }}</strong></p>
